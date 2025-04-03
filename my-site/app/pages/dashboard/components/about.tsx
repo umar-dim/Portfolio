@@ -8,7 +8,7 @@ const About = () => {
 					<img
 						src="./profile.jpg"
 						alt="Umar Khan"
-						className="object-cover w-48 h-48 rounded-full"
+						className="object-cover w-48 h-48 rounded-full transform scale-x-[-1]"
 					/>
 				</div>
 
