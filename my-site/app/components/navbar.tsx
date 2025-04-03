@@ -77,6 +77,7 @@ const Navbar = () => {
 								to={item.link}
 								className="my-2 text-neutral-700 transition-colors duration-300 transform dark:text-neutral-200 hover:text-stone-500 dark:hover:text-stone-400 md:mx-4 md:my-0"
 								end
+								onClick={() => setIsOpen(false)}
 							>
 								{item.label}
 							</NavLink>
