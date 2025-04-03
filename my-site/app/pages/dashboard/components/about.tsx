@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
 	return (
-		<section id="experience">
+		<section id="about">
 			<div className="flex flex-col gap-5 md:flex-row-reverse md:justify-between">
 				<div className="md:flex-1 justify-center mx-auto px-6 py-4">
 					<img

@@ -1,8 +1,7 @@
 import About from "./components/about";
 import Contact from "./components/contact";
 import Experience from "./components/experience/experience";
-import Skills from "./components/skills";
-
+import Skills from "./components/skills/skills";
 
 export function Dashboard() {
 	return (

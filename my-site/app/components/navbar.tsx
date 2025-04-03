@@ -65,7 +65,7 @@ const Navbar = () => {
 				>
 					<div className="flex flex-col md:flex-row md:mx-6">
 						{[
-							{ label: "About", link: "/" },
+							{ label: "About", link: "/#about" },
 							{ label: "Skills", link: "/#skills" },
 							{ label: "Experience", link: "/#experience" },
 							{ label: "Projects", link: "/projects" },

@@ -1,5 +1,5 @@
 import Navbar from "~/components/navbar";
-import Skills from "~/pages/dashboard/components/skills";
+import Skills from "~/pages/dashboard/components/skills/skills";
 
 export function Projects() {
 	return (
