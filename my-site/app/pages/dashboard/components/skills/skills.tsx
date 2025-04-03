@@ -16,6 +16,10 @@ const Skills = () => {
 			skillType: "Languages",
 			skills: [
 				{
+					skill: "C/C++",
+					proficiency: "Expert",
+				},
+				{
 					skill: "Python",
 					proficiency: "Advanced",
 				},
@@ -24,8 +28,24 @@ const Skills = () => {
 					proficiency: "Intermediate",
 				},
 				{
-					skill: "HTML",
+					skill: "TypeScript",
 					proficiency: "Intermediate",
+				},
+				{
+					skill: "Dart",
+					proficiency: "Intermediate",
+				},
+				{
+					skill: "Java",
+					proficiency: "Intermediate",
+				},
+				{
+					skill: "Ruby",
+					proficiency: "Beginner",
+				},
+				{
+					skill: "F#",
+					proficiency: "Beginner",
 				},
 			],
 		},
@@ -34,11 +54,15 @@ const Skills = () => {
 			skillType: "Frameworks",
 			skills: [
 				{
-					skill: "Django",
-					proficiency: "Intermediate",
+					skill: "React",
+					proficiency: "Advanced",
 				},
 				{
-					skill: "React",
+					skill: "Flutter",
+					proficiency: "Advanced",
+				},
+				{
+					skill: "Node.js",
 					proficiency: "Intermediate",
 				},
 				{
@@ -46,7 +70,11 @@ const Skills = () => {
 					proficiency: "Intermediate",
 				},
 				{
-					skill: "Bootstrap",
+					skill: "PostgreSQL",
+					proficiency: "Intermediate",
+				},
+				{
+					skill: "MongoDb",
 					proficiency: "Intermediate",
 				},
 			],
@@ -57,15 +85,27 @@ const Skills = () => {
 			skills: [
 				{
 					skill: "Git",
-					proficiency: "Advanced",
+					proficiency: "Expert",
+				},
+				{
+					skill: "VS Code",
+					proficiency: "Expert",
+				},
+				{
+					skill: "Neovim/vim",
+					proficiency: "Expert",
 				},
 				{
 					skill: "GitHub",
 					proficiency: "Advanced",
 				},
 				{
-					skill: "VS Code",
-					proficiency: "Advanced",
+					skill: "Android Studio",
+					proficiency: "Intermediate",
+				},
+				{
+					skill: "IntelliJ IDEA",
+					proficiency: "Intermediate",
 				},
 			],
 		},
@@ -75,9 +115,7 @@ const Skills = () => {
 		<section id="skills">
 			<div className=" flex flex-col  items-start gap-5  min-h-0 container px-6 py-4 mx-auto">
 				<h1 className="text-3xl font-bold">Skills</h1>
-				{/* <div
-					className="flex flex-col sm:flex-wrap md:flex-row min-w-sm justify-start gap-4 bg-red-500  px-6 py-4"
-				>
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 					{skills.map((category) => (
 						<Skill
 							key={category.skillType}
@@ -85,7 +123,7 @@ const Skills = () => {
 							skills={category.skills}
 						/>
 					))}
-				</div> */}
+				</div>
 			</div>
 		</section>
 	);
