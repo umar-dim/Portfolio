@@ -8,11 +8,11 @@ const Navbar = () => {
 		<nav className="relative bg-white shadow dark:bg-neutral-800">
 			<div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
 				<div className="flex items-center justify-between">
-					<a href="home">
+					<NavLink to="/" end>
 						<div className="text-2xl font-bold my-2 text-neutral-700 dark:text-neutral-200">
 							Portfolio
 						</div>
-					</a>
+					</NavLink>
 
 					{/* Mobile menu button */}
 					<div className="flex lg:hidden">
@@ -67,8 +67,9 @@ const Navbar = () => {
 						{[
 							{ label: "About", link: "/" },
 							{ label: "Skills", link: "/#skills" },
-							{ label: "Experience", link: "/experience" },
+							{ label: "Experience", link: "/#experience" },
 							{ label: "Projects", link: "/projects" },
+							{ label: "Resume", link: "/resume" },
 							{ label: "Contact", link: "/#contact" },
 						].map((item, index) => (
 							<NavLink
