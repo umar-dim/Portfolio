@@ -17,7 +17,7 @@ const Skill: React.FC<SkillProps> = ({ skillType, skills }) => {
 	};
 
 	return (
-		<div className="min-w-[318px] px-5 py-3 bg-white rounded-lg shadow-md dark:bg-neutral-800">
+		<div className="w-full sm:min-w-[318px] px-5 py-3 bg-white rounded-lg shadow-md dark:bg-neutral-800">
 			<div className="mt-2">
 				<div className="flex items-center">
 					<p className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-neutral-200">
