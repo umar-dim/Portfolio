@@ -19,6 +19,10 @@ Welcome to my portfolio website repository! This project showcases my personal a
 
 Check out the live version of my portfolio website [here](https://umarahmedkhan.vercel.app/).
 
+## Hosting
+
+This portfolio website is hosted on [Vercel](https://vercel.com), ensuring fast and reliable performance.
+
 ## Folder Structure
 
 - **app/**: Contains the main application files, including components, pages, and routes.
