@@ -7,7 +7,7 @@ const Contact = () => {
 				</h1>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
 					<a
-						href="https://www.linkedin.com/in/your-linkedin"
+						href="https://www.linkedin.com/in/umarkhan394/"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all dark:bg-neutral-800 dark:text-white group"
@@ -23,7 +23,7 @@ const Contact = () => {
 					</a>
 
 					<a
-						href="mailto:your.email@example.com"
+						href="mailto:khanumar394@gmail.com"
 						className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all dark:bg-neutral-800 dark:text-white group"
 					>
 						<svg
@@ -43,7 +43,7 @@ const Contact = () => {
 					</a>
 
 					<a
-						href="https://github.com/your-github"
+						href="https://github.com/umar-dim"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all dark:bg-neutral-800 dark:text-white group"
