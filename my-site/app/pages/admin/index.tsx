@@ -1,24 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { supabase } from "~/services/supabaseService";
+import { useAuthContext } from "~/context/authContext";
 
 const Admin = () => {
-	// const { session, signOut } = UserAuth();
+	const { session, signOut } = useAuthContext();
 	const navigate = useNavigate();
 	const handleSignOut = async (e: React.FormEvent) => {
 		e.preventDefault();
 
 		try {
-			const { error } = await supabase.auth.signOut();
-			if (error) {
-				throw error;
-			}
+			await signOut();
 			navigate("/");
 		} catch (err) {
 			console.error("Error signing out:", err);
 		}
 	};
-	// console.log(session);
 
 	return (
 		<div>

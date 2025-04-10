@@ -1,26 +1,39 @@
+import { useEffect, useState } from "react";
 import ExperienceCard from "./experienceCard";
+import { fetchExperiences } from "~/services/supabaseService";
+import type { Experience  } from "~/types/experience";
+import LoadingSpinner from "~/components/LoadingSpinner";
+// import LoadingSpinner from "@/app/components/LoadingSpinner";
 
 const Experience = () => {
-	const experiences = [
-		{
-			date: "Jan 2025 - 4 months",
-			category: "Full Stack",
-			title: "Web Developer Intern",
-			description:
-				"Helped building a real-time telehealth app connecting physicians and patients via video calls, utilizing AI-driven diagnostics and feedback to enhance consultations, improve decision-making, and increase healthcare accessibility and efficiency.",
-			company: "Ingenio Care",
-			companyImg: "./ingenio.png",
-		},
-		{
-			date: "Jan 2023 - Dec 2024",
-			category: "Tutor",
-			title: "Computer Science Tutor",
-			description:
-				"I assist students in understanding complex concepts, completing assignments, and enhancing problem-solving skills. I provide personalized guidance to help students succeed in their computer science courses.",
-			company: "ELC - University of Illinois Chicago",
-			companyImg: "./uic.png",
-		},
-	];
+	const [experiences, setExperiences] = useState<Experience[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const getExperiences = async () => {
+			try {
+				const data = await fetchExperiences();
+				setExperiences(data);
+				// console.log("experiences", data);
+			} finally {
+				setIsLoading(false);
+			}
+		};
+		
+		getExperiences();
+	}, []);
+
+	if (isLoading) {
+		return (
+			<>
+				<h1 className="text-3xl font-bold mb-4">Experience</h1>
+				<div className="container mx-auto px-4 py-8">
+					<LoadingSpinner />
+				</div>
+			</>
+		);
+	}
+
 	return (
 		<section id="experience">
 			<div className="container mx-auto px-4">

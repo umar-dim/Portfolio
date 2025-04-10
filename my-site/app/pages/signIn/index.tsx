@@ -30,7 +30,7 @@ const Signin = () => {
 		}
 
 		if (data.session) {
-			console.log("Session data:", data.session);
+			// console.log("Session data:", data.session);
 			setError(""); // Reset the error when there's a session
 		}
 	};

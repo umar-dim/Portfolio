@@ -3,11 +3,11 @@ interface ProjectDetailsProps {
 	name: string;
 	description: string;
 	technologies: string[];
-	githubLink: string;
+	githubLink?: string;
 	liveLink?: string;
-	dateCompleted: string;
-	motivation: string;
-	learnings: string[];
+	dateCompleted?: string;
+	motivation?: string;
+	learnings?: string[];
 }
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({
@@ -83,7 +83,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({
 					What I Learned
 				</h2>
 				<ul className="list-disc list-inside text-gray-600 dark:text-neutral-400">
-					{learnings.map((learning, index) => (
+					{learnings?.map((learning, index) => (
 						<li key={index}>{learning}</li>
 					))}
 				</ul>

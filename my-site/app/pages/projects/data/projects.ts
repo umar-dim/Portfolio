@@ -16,7 +16,7 @@ export const projects: Project[] = [
 		name: "Portfolio Website 🌟",
 		description:
 			"A personal portfolio website to showcase my projects and skills",
-		technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+		technologies: [	],
 		githubLink: "https://github.com/umar-dim/Portfolio",
 		liveLink: "https://your-portfolio-url.com",
 		dateCompleted: "March 2025",

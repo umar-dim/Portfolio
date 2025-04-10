@@ -1,115 +1,33 @@
+import { useEffect, useState } from "react";
 import Skill from "./skillsCard";
-
-interface SkillItem {
-	skill: string;
-	proficiency: "Beginner" | "Intermediate" | "Advanced" | "Expert";
-}
-
-interface SkillCategory {
-	skillType: string;
-	skills: SkillItem[];
-}
+import { fetchSkills } from "~/services/supabaseService";
+import LoadingSpinner from "~/components/LoadingSpinner";
+import type { SkillCategory } from "~/types/skill";
 
 const Skills = () => {
-	const skills: SkillCategory[] = [
-		{
-			skillType: "Languages",
-			skills: [
-				{
-					skill: "C/C++",
-					proficiency: "Expert",
-				},
-				{
-					skill: "Python",
-					proficiency: "Advanced",
-				},
-				{
-					skill: "JavaScript",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "TypeScript",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "Dart",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "Java",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "Ruby",
-					proficiency: "Beginner",
-				},
-				{
-					skill: "F#",
-					proficiency: "Beginner",
-				},
-			],
-		},
+	const [skills, setSkills] = useState<SkillCategory[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
 
-		{
-			skillType: "Frameworks",
-			skills: [
-				{
-					skill: "React",
-					proficiency: "Advanced",
-				},
-				{
-					skill: "Flutter",
-					proficiency: "Advanced",
-				},
-				{
-					skill: "Node.js",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "Tailwind",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "PostgreSQL",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "MongoDb",
-					proficiency: "Intermediate",
-				},
-			],
-		},
+	useEffect(() => {
+		const getSkills = async () => {
+			try {
+				const skillsData = await fetchSkills();
+				setSkills(skillsData);
+			} finally {
+				setIsLoading(false);
+			}
+		};
 
-		{
-			skillType: "Tools",
-			skills: [
-				{
-					skill: "Git",
-					proficiency: "Expert",
-				},
-				{
-					skill: "VS Code",
-					proficiency: "Expert",
-				},
-				{
-					skill: "Neovim/vim",
-					proficiency: "Expert",
-				},
-				{
-					skill: "GitHub",
-					proficiency: "Advanced",
-				},
-				{
-					skill: "Android Studio",
-					proficiency: "Intermediate",
-				},
-				{
-					skill: "IntelliJ IDEA",
-					proficiency: "Intermediate",
-				},
-			],
-		},
-	];
+		getSkills();
+	}, []);
+
+	if (isLoading) {
+		return (
+			<div className="container mx-auto px-4 py-8">
+				<LoadingSpinner />
+			</div>
+		);
+	}
 
 	return (
 		<div className="container mx-auto px-4">

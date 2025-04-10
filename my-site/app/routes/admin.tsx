@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import Navbar from "~/components/navbar";
 import { useEffect, useState } from "react";
 import Admin from "~/pages/admin";
+import AdminRoute from "~/components/adminRoute";
 
 export function meta({}: Route.MetaArgs) {
 	const [currentUrl, setCurrentUrl] = useState("");
@@ -55,9 +56,9 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
 	return (
-		<>
+		<AdminRoute>
 			<Navbar />
 			<Admin />
-		</>
+		</AdminRoute>
 	);
 }

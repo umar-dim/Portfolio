@@ -1,14 +1,6 @@
-interface SkillItem {
-	skill: string;
-	proficiency: "Beginner" | "Intermediate" | "Advanced" | "Expert";
-}
+import type { SkillCategory, SkillItem } from "~/types/skill";
 
-interface SkillProps {
-	skillType: string;
-	skills: SkillItem[];
-}
-
-const Skill: React.FC<SkillProps> = ({ skillType, skills }) => {
+const Skill: React.FC<SkillCategory> = ({ skillType, skills }) => {
 	const proficiencyColors: Record<SkillItem["proficiency"], string> = {
 		Beginner: "bg-red-500",
 		Intermediate: "bg-yellow-500",
@@ -28,11 +20,18 @@ const Skill: React.FC<SkillProps> = ({ skillType, skills }) => {
 
 			<div className="flex flex-col mt-2">
 				{skills.map((skill) => (
-					<div key={skill.skill} className="flex items-center justify-between my-0.25">
+					<div
+						key={skill.skill}
+						className="flex items-center justify-between my-0.25"
+					>
 						<span className="font-bold text-gray-700 cursor-pointer dark:text-neutral-200">
 							{skill.skill}
 						</span>
-						<span className={`p-1 text-xs text-white rounded-full ${proficiencyColors[skill.proficiency]}`}>
+						<span
+							className={`p-1 text-xs text-white rounded-full ${
+								proficiencyColors[skill.proficiency]
+							}`}
+						>
 							{/* {skill.proficiency} */}
 						</span>
 					</div>
