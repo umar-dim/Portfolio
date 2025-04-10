@@ -94,6 +94,24 @@ export const projects: Project[] = [
 		],
 	},
 	{
+		id: "memory-lane",
+		name: "🧠 Memory Lane",
+		description:
+			"A community-driven platform where users share cultural memories through short 'memory cards', fostering connection and comfort through shared experiences and nostalgia.",
+		technologies: ["React", "TypeScript", "Django", "Python"],
+		githubLink: "https://github.com/yourusername/memory-lane",
+		dateCompleted: "April 2025",
+		motivation:
+			"Created to build a space where people can connect through shared cultural experiences and preserve personal memories in a meaningful, community-driven way.",
+		learnings: [
+			"Developed a full-stack application using React, TypeScript, Django, and Python",
+			"Implemented user authentication and interactive UI components",
+			"Built RESTful APIs in Django to manage memory card content",
+			"Explored user-driven content and social interaction features",
+			"Enhanced skills in collaborative development and community-focused design",
+		],
+	},
+	{
 		id: "real-estate-predictor",
 		name: "Real Estate Investment Predictor 🏘️",
 		description:
