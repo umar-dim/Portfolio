@@ -22,19 +22,17 @@ const Experience = () => {
 		},
 	];
 	return (
-		<section id ="experience" >
-			<div className="flex-1 flex flex-col items-start gap-5 min-h-0 container px-6 py-4 mx-auto">
-				<h1 className="text-3xl font-bold">Experience</h1>
-
+		<section id="experience">
+			<div className="container mx-auto px-4">
+				<h1 className="text-3xl font-bold mb-4">Experience</h1>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{experiences.map((experience, index) => (
 						<ExperienceCard key={index} {...experience} />
 					))}
 				</div>
-
 			</div>
 		</section>
 	);
-}
+};
 
-export default Experience
+export default Experience;
