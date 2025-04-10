@@ -95,7 +95,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: "nostalgia-threads",
-		name: "🧠 Nostalgia Threads",
+		name: "Nostalgia Threads 🧠",
 		description:
 			"A community-driven platform where users share cultural memories through short 'memory cards', fostering connection and comfort through shared experiences and nostalgia.",
 		technologies: ["React", "TypeScript", "Django", "Python"],
