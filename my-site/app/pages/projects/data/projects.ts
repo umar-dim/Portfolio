@@ -94,12 +94,12 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		id: "memory-lane",
-		name: "🧠 Memory Lane",
+		id: "nostalgia-threads",
+		name: "🧠 Nostalgia Threads",
 		description:
 			"A community-driven platform where users share cultural memories through short 'memory cards', fostering connection and comfort through shared experiences and nostalgia.",
 		technologies: ["React", "TypeScript", "Django", "Python"],
-		githubLink: "https://github.com/yourusername/memory-lane",
+		githubLink: "https://github.com/umar-dim/Nostalgia-Threads",
 		dateCompleted: "April 2025",
 		motivation:
 			"Created to build a space where people can connect through shared cultural experiences and preserve personal memories in a meaningful, community-driven way.",
