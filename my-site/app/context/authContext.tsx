@@ -4,11 +4,8 @@ import type { Session } from "@supabase/supabase-js";
 import { supabase } from "../services/supabaseService";
 
 type AuthContextType = {
-	signInUser: (
-		email: string,
-		password: string
-	) => Promise<{ success: boolean; data?: any; error?: string }>;
 	session: Session | null;
+	signInUser: (email: string, password: string) => Promise<{ data: any; error: any }>;
 	signOut: () => Promise<void>;
 };
 
@@ -28,22 +25,11 @@ export const AuthContextProvider = ({
 				password: password,
 			});
 
-			if (error) {
-				console.error("Sign-in error:", error.message);
-				return { success: false, error: error.message };
-			}
-
 			// console.log("Sign-in success:", data);
-			return { success: true, data };
+			return {data: data, error: error};
 		} catch (error) {
-			console.error(
-				"Unexpected error during sign-in:",
-				error instanceof Error ? error.message : "Unknown error"
-			);
-			return {
-				success: false,
-				error: "An unexpected error occurred. Please try again.",
-			};
+			console.error("Unexpected error during sign-in:", error instanceof Error ? error.message : "Unknown error");
+			return { data: null, error: error };
 		}
 	};
 

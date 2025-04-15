@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { supabase } from "~/services/supabaseService";
+import { useNavigate } from "react-router";
+import { useAuthContext } from "~/context/authContext";
 
 const Signin = () => {
 	const [email, setEmail] = useState("");
@@ -10,12 +10,11 @@ const Signin = () => {
 	// const { signInUser } = UserAuth();
 	const navigate = useNavigate();
 
+	const { signInUser } = useAuthContext();
+
 	const handleSignIn = async (e: React.FormEvent) => {
 		e.preventDefault();
-		const { data, error } = await supabase.auth.signInWithPassword({
-			email: email.toLowerCase(),
-			password: password,
-		});
+		const { data, error } = await signInUser(email, password); // Call the sign-in function
 
 		if (error) {
 			setError(error.message); // Set the error message if sign-in fails

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useAuthContext } from "~/context/authContext";
 
@@ -15,6 +15,10 @@ const Admin = () => {
 			console.error("Error signing out:", err);
 		}
 	};
+
+	useEffect(() => {
+		console.log("Session data:", session);
+	}, [session]);
 
 	return (
 		<div>
