@@ -18,7 +18,8 @@ const Navbar = () => {
     <nav className="relative bg-white shadow dark:bg-neutral-800">
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold my-2 text-neutral-700 dark:text-neutral-200">
+          <Link href="/" className="flex items-center gap-2 text-2xl font-bold my-2 text-neutral-700 dark:text-neutral-200">
+            <img src="/favicon.png" alt="Logo" className="w-8 h-8" />
             Portfolio
           </Link>
 

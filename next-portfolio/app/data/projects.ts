@@ -1,3 +1,14 @@
+import {
+  User,
+  Ticket,
+  ShoppingCart,
+  Palette,
+  MessageCircle,
+  Home,
+  Gamepad2,
+  Code,
+} from "lucide-react";
+
 export interface Project {
   id: string;
   name: string;
@@ -8,6 +19,7 @@ export interface Project {
   dateCompleted: string;
   motivation: string;
   learnings: string[];
+  icon: React.ElementType;
 }
 
 export const projects: Project[] = [
@@ -28,6 +40,7 @@ export const projects: Project[] = [
       "Improved TypeScript skills with React",
       "Gained experience with React Router and server-side rendering",
     ],
+    icon: User,
   },
   {
     id: "evently",
@@ -54,6 +67,7 @@ export const projects: Project[] = [
       "Used MongoDB for event and user data storage",
       "Developed QR code scanning functionality for check-ins using the camera",
     ],
+    icon: Ticket,
   },
   {
     id: "smart-grocery-app",
@@ -73,6 +87,7 @@ export const projects: Project[] = [
       "Used Git for version control and Jira for agile task management",
       "Improved user engagement by 35% and recipe conversions by 25%",
     ],
+    icon: ShoppingCart,
   },
   {
     id: "moodcanvas",
@@ -92,6 +107,7 @@ export const projects: Project[] = [
       "Curated a wellness content feed with personalized recommendations",
       "Integrated UIC mental health resources for accessibility",
     ],
+    icon: Palette,
   },
   {
     id: "nostalgia-threads",
@@ -110,6 +126,7 @@ export const projects: Project[] = [
       "Explored user-driven content and social interaction features",
       "Enhanced skills in collaborative development and community-focused design",
     ],
+    icon: MessageCircle,
   },
   {
     id: "real-estate-predictor",
@@ -136,6 +153,7 @@ export const projects: Project[] = [
       "Explored correlations between demographic features and property values",
       "Collaborated on a large-scale data project using Git and Jupyter for reproducibility",
     ],
+    icon: Home,
   },
   {
     id: "three-card-poker",
@@ -155,6 +173,7 @@ export const projects: Project[] = [
       "Managed game state securely and efficiently",
       "Followed Agile methodology and CI/CD practices for streamlined development",
     ],
+    icon: Gamepad2,
   },
   {
     id: "level-game",
@@ -173,5 +192,6 @@ export const projects: Project[] = [
       "Used randomization to dynamically place coins and increase replayability",
       "Understood the principles of event-driven programming",
     ],
+    icon: Code,
   },
 ];

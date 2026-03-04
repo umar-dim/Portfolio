@@ -1,6 +1,26 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { experiences } from "../data/experiences";
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, x: 0 },
+};
+
 const ExperienceCard = ({
+  id,
   date,
   category,
   title,
@@ -8,6 +28,7 @@ const ExperienceCard = ({
   company,
   companyImg,
 }: {
+  id: string;
   date: string;
   category: string;
   title: string;
@@ -16,39 +37,51 @@ const ExperienceCard = ({
   companyImg: string;
 }) => {
   return (
-    <div className="w-full px-8 py-4 bg-white rounded-lg shadow-md dark:bg-neutral-800">
-      <div className="flex items-center justify-between">
-        <span className="text-sm font-light text-gray-600 dark:text-neutral-400">
-          {date}
-        </span>
+    <motion.div
+      variants={item}
+      className="relative pl-8 border-l-2 border-neutral-300 dark:border-neutral-600"
+    >
+      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-600 dark:bg-neutral-400 ring-4 ring-white dark:ring-neutral-800" />
 
-        <span className="px-3 py-1 text-sm font-bold text-neutral-100 transition-colors duration-300 transform bg-neutral-600 rounded cursor-pointer hover:bg-neutral-500">
-          {category}
-        </span>
-      </div>
+      <Link href={`/experiences/${id}`}>
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="group relative mb-8 p-6 bg-white rounded-xl shadow-md dark:bg-neutral-800 hover:shadow-xl transition-shadow duration-300"
+        >
 
-      <div className="mt-2">
-        <div className="flex items-center">
-          <img
-            className="object-cover w-8 h-8 sm:w-10 sm:h-10 mr-4 rounded-full"
-            src={companyImg}
-            alt="Company logo"
-          />
-          <p className="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-neutral-200">
-            {title}
-          </p>
-        </div>
-        <p className="mt-2 text-gray-600 dark:text-neutral-400">
-          {description}
-        </p>
-      </div>
+          <div className="relative z-20">
+            <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400 group-hover:text-white transition-colors duration-300">
+                {date}
+              </span>
+              <span className="px-3 py-1 text-xs font-semibold text-white bg-gradient-to-r from-neutral-600 to-neutral-700 rounded-full">
+                {category}
+              </span>
+            </div>
 
-      <div className="flex items-center mt-4">
-        <span className="font-bold text-gray-700 cursor-pointer dark:text-neutral-200">
-          {company}
-        </span>
-      </div>
-    </div>
+            <div className="flex items-center gap-3 mb-3">
+              <img
+                className="w-10 h-10 rounded-lg object-cover"
+                src={companyImg}
+                alt={`${company} logo`}
+              />
+              <div>
+                <p className="text-lg font-bold text-gray-800 dark:text-white group-hover:text-white transition-colors duration-300">
+                  {title}
+                </p>
+                <p className="text-sm font-medium text-neutral-600 dark:text-neutral-300 group-hover:text-white/80 transition-colors duration-300">
+                  {company}
+                </p>
+              </div>
+            </div>
+
+            <p className="text-gray-600 dark:text-neutral-400 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+              {description}
+            </p>
+          </div>
+        </motion.div>
+      </Link>
+    </motion.div>
   );
 };
 
@@ -56,12 +89,25 @@ const Experience = () => {
   return (
     <section id="experience">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-4">Experience</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold mb-8 text-gray-800 dark:text-white"
+        >
+          Experience
+        </motion.h2>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {experiences.map((exp, index) => (
             <ExperienceCard key={index} {...exp} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
