@@ -15,14 +15,6 @@ Welcome to my portfolio website repository! This project showcases my personal a
 - **Tailwind CSS**: For styling the application.
 - **Supabase**: For backend services and database management.
 
-## 🌐 Live Site
-
-Check out the live version of my portfolio website [here](https://umarahmedkhan.vercel.app/).
-
-## 🚀 Hosting
-
-This portfolio website is hosted on [Vercel](https://vercel.com), ensuring fast and reliable performance.
-
 ## 📂 Folder Structure
 
 - **app/**: Contains the main application files, including components, pages, and routes.
