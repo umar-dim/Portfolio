@@ -7,7 +7,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "About", link: "/#about" },
     { label: "Experience", link: "/#experience" },
     { label: "Projects", link: "/projects" },
     { label: "Resume", link: "/resume" },

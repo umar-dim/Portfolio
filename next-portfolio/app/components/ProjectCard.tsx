@@ -32,24 +32,19 @@ const ProjectCard: React.FC<Project> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -8 }}
+      whileHover={{ scale: 1.02 }}
     >
       <Link
         href={`/projects/${id}`}
-        className="group relative block h-full w-full bg-white rounded-xl shadow-md dark:bg-neutral-800 overflow-hidden"
+        className="group relative block h-full w-full bg-white rounded-xl shadow-md dark:bg-neutral-800 overflow-hidden hover:shadow-xl transition-shadow duration-300"
       >
-        <div className="absolute inset-0 bg-neutral-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30 flex flex-col items-center justify-center gap-2">
-          <span className="text-white font-semibold text-xl">View {name}</span>
-          <span className="text-white/70 text-sm">Click to learn more</span>
-        </div>
-
-        <div className="relative p-6 flex flex-col h-full z-20 bg-white dark:bg-neutral-800 group-hover:brightness-75 dark:group-hover:brightness-50 transition-all duration-300">
+        <div className="relative p-6 flex flex-col h-full z-20 bg-white dark:bg-neutral-800">
           <div className="flex items-start gap-3">
             <div className="p-2 bg-neutral-100 dark:bg-neutral-700 rounded-lg">
               <Icon className="w-6 h-6 text-neutral-600 dark:text-neutral-300" />
             </div>
             <div className="flex-1">
-              <p className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-white transition-colors duration-300">
+              <p className="text-xl font-bold text-gray-800 dark:text-white">
                 {name}
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
@@ -64,7 +59,7 @@ const ProjectCard: React.FC<Project> = ({
               </div>
             </div>
           </div>
-          <p className="mt-3 text-gray-600 dark:text-neutral-400 group-hover:text-white/80 line-clamp-3 transition-colors duration-300">
+          <p className="mt-3 text-gray-600 dark:text-neutral-400 line-clamp-3">
             {description}
           </p>
         </div>

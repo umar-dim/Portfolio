@@ -51,7 +51,7 @@ const ExperienceCard = ({
 
           <div className="relative z-20">
             <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-              <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400 group-hover:text-white transition-colors duration-300">
+              <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
                 {date}
               </span>
               <span className="px-3 py-1 text-xs font-semibold text-white bg-linear-to-r from-neutral-600 to-neutral-700 rounded-full">
@@ -66,16 +66,16 @@ const ExperienceCard = ({
                 alt={`${company} logo`}
               />
               <div>
-                <p className="text-lg font-bold text-gray-800 dark:text-white group-hover:text-white transition-colors duration-300">
+                <p className="text-lg font-bold text-gray-800 dark:text-white">
                   {title}
                 </p>
-                <p className="text-sm font-medium text-neutral-600 dark:text-neutral-300 group-hover:text-white/80 transition-colors duration-300">
+                <p className="text-sm font-medium text-neutral-600 dark:text-neutral-300">
                   {company}
                 </p>
               </div>
             </div>
 
-            <p className="text-gray-600 dark:text-neutral-400 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+            <p className="text-gray-600 dark:text-neutral-400 leading-relaxed">
               {description}
             </p>
           </div>

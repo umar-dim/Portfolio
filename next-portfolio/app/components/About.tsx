@@ -29,7 +29,7 @@ const letterVariant = {
 
 const About = () => {
   return (
-    <section id="about">
+    <section>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
