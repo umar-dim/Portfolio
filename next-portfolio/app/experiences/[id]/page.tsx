@@ -55,7 +55,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
               {experience.company}
             </p>
           </div>
-          <span className="px-3 py-1 text-sm font-semibold text-white bg-gradient-to-r from-neutral-600 to-neutral-700 rounded-full">
+          <span className="px-3 py-1 text-sm font-semibold text-white bg-linear-to-r from-neutral-600 to-neutral-700 rounded-full">
             {experience.category}
           </span>
         </div>
@@ -74,7 +74,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <ul className="space-y-2 text-gray-600 dark:text-neutral-400">
               {experience.responsibilities.map((resp, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 bg-neutral-500 rounded-full flex-shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 bg-neutral-500 rounded-full shrink-0" />
                   {resp}
                 </li>
               ))}
@@ -90,7 +90,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <ul className="space-y-2 text-gray-600 dark:text-neutral-400">
               {experience.achievements.map((achievement, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 bg-green-500 rounded-full flex-shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 bg-green-500 rounded-full shrink-0" />
                   {achievement}
                 </li>
               ))}
@@ -107,7 +107,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
               {experience.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className={`px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r ${getSkillColor(tech)}`}
+                  className={`px-3 py-1 text-sm font-medium rounded-full bg-linear-to-r ${getSkillColor(tech)}`}
                 >
                   {tech}
                 </span>
@@ -124,7 +124,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <ul className="space-y-2 text-gray-600 dark:text-neutral-400">
               {experience.learnings.map((learning, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full flex-shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0" />
                   {learning}
                 </li>
               ))}

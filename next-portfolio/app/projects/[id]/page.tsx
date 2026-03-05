@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className={`px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r ${getSkillColor(tech)}`}
+              className={`px-3 py-1 text-sm font-medium rounded-full bg-linear-to-r ${getSkillColor(tech)}`}
             >
               {tech}
             </span>
@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <ul className="mt-2 space-y-2 text-gray-600 dark:text-neutral-400">
               {project.learnings.map((learning, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <span className="mt-1.5 w-1.5 h-1.5 bg-neutral-500 rounded-full flex-shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 bg-neutral-500 rounded-full shrink-0" />
                   {learning}
                 </li>
               ))}

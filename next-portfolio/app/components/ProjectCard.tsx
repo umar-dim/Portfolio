@@ -56,7 +56,7 @@ const ProjectCard: React.FC<Project> = ({
                 {technologies.slice(0, 4).map((tech) => (
                   <span
                     key={tech}
-                    className={`px-2 py-1 text-xs font-medium rounded-full bg-gradient-to-r ${getSkillColor(tech)}`}
+                    className={`px-2 py-1 text-xs font-medium rounded-full bg-linear-to-r ${getSkillColor(tech)}`}
                   >
                     {tech}
                   </span>

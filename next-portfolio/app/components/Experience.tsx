@@ -41,7 +41,7 @@ const ExperienceCard = ({
       variants={item}
       className="relative pl-8 border-l-2 border-neutral-300 dark:border-neutral-600"
     >
-      <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-600 dark:bg-neutral-400 ring-4 ring-white dark:ring-neutral-800" />
+      <div className="absolute -left-2.25 top-0 w-4 h-4 rounded-full bg-neutral-600 dark:bg-neutral-400 ring-4 ring-white dark:ring-neutral-800" />
 
       <Link href={`/experiences/${id}`}>
         <motion.div
@@ -54,7 +54,7 @@ const ExperienceCard = ({
               <span className="text-sm font-medium text-neutral-500 dark:text-neutral-400 group-hover:text-white transition-colors duration-300">
                 {date}
               </span>
-              <span className="px-3 py-1 text-xs font-semibold text-white bg-gradient-to-r from-neutral-600 to-neutral-700 rounded-full">
+              <span className="px-3 py-1 text-xs font-semibold text-white bg-linear-to-r from-neutral-600 to-neutral-700 rounded-full">
                 {category}
               </span>
             </div>
